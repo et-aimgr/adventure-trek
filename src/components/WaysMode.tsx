@@ -8,7 +8,7 @@ import { useTrip } from "@/context/TripContext";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Airplane, Train, Bus, Car, MapPin } from "lucide-react";
+import { PlaneTakeoff, Train, Bus, Car, MapPin } from "lucide-react";
 import { Transportation } from "@/types";
 
 export default function WaysMode() {
@@ -18,7 +18,7 @@ export default function WaysMode() {
   const getTransportationIcon = (type: string) => {
     switch (type) {
       case "flight":
-        return <Airplane className="h-4 w-4" />;
+        return <PlaneTakeoff className="h-4 w-4" />;
       case "train":
         return <Train className="h-4 w-4" />;
       case "bus":

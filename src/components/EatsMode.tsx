@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -123,8 +122,7 @@ export default function EatsMode() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredRestaurants.map((restaurant) => {
-              const destination = trip.destinations.find(d => d.id === restaurant.destinationId) || 
-                                destinations.find(d => d.id === restaurant.destinationId);
+              const destination = trip.destinations.find(d => d.id === restaurant.destinationId);
                                 
               return (
                 <Card key={restaurant.id} className="card-hover overflow-hidden">
