@@ -1,12 +1,12 @@
 
 import { useState } from "react";
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { experiences } from "@/data/sampleData";
 import { useTrip } from "@/context/TripContext";
-import { Search, Star, MapPin, Clock, DollarSign } from "lucide-react";
+import { Search, Star, MapPin, Clock } from "lucide-react";
 
 export default function AmazeMode() {
   const { trip, addExperience, removeExperience } = useTrip();
@@ -32,10 +32,10 @@ export default function AmazeMode() {
           <h2 className="text-2xl font-bold tracking-tight">Your Experiences</h2>
           {trip.experiences.length === 0 ? (
             <div className="text-center py-12 border rounded-lg bg-muted/30">
-              <Star className="mx-auto h-12 w-12 text-muted-foreground" />
+              <MapPin className="mx-auto h-12 w-12 text-muted-foreground" />
               <h3 className="mt-4 text-lg font-medium">No experiences added yet</h3>
               <p className="mt-2 text-sm text-muted-foreground max-w-md mx-auto">
-                Add experiences to make your trip more memorable. Discover popular activities below.
+                Add experiences to your trip to plan your activities.
               </p>
             </div>
           ) : (
@@ -54,27 +54,28 @@ export default function AmazeMode() {
                       </div>
                     </div>
                     <CardContent className="pt-4">
-                      <h3 className="font-bold">{experience.name}</h3>
-                      {destination && (
-                        <div className="flex items-center text-sm text-muted-foreground mt-1">
-                          <MapPin className="h-3 w-3 mr-1" /> {destination.name}, {destination.country}
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h3 className="font-bold">{experience.name}</h3>
+                          {destination && (
+                            <div className="flex items-center text-sm text-muted-foreground mt-1">
+                              <MapPin className="h-3 w-3 mr-1" /> {destination.name}
+                            </div>
+                          )}
                         </div>
-                      )}
-                      <div className="flex items-center gap-4 mt-2">
                         {experience.duration && (
-                          <div className="flex items-center text-sm">
-                            <Clock className="h-3 w-3 mr-1 text-muted-foreground" /> 
+                          <Badge variant="outline" className="flex items-center gap-1">
+                            <Clock className="h-3 w-3" /> 
                             {experience.duration}
-                          </div>
-                        )}
-                        {experience.price && (
-                          <div className="flex items-center text-sm">
-                            <DollarSign className="h-3 w-3 mr-1 text-muted-foreground" /> 
-                            {experience.price}
-                          </div>
+                          </Badge>
                         )}
                       </div>
-                      <p className="text-sm mt-2 line-clamp-2">{experience.description}</p>
+                      <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{experience.description}</p>
+                      {experience.price && (
+                        <Badge variant="secondary" className="mt-2">
+                          ${experience.price}
+                        </Badge>
+                      )}
                     </CardContent>
                     <CardFooter className="pt-0">
                       <Button 
@@ -94,7 +95,7 @@ export default function AmazeMode() {
 
         <div className="flex flex-col gap-4">
           <div className="flex flex-col md:flex-row justify-between gap-4">
-            <h2 className="text-2xl font-bold tracking-tight">Discover Experiences</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Find Experiences</h2>
             <div className="flex gap-2">
               <select
                 className="px-3 py-2 bg-background border rounded-md text-sm"
@@ -123,9 +124,8 @@ export default function AmazeMode() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredExperiences.map((experience) => {
-              const destination = trip.destinations.find(d => d.id === experience.destinationId) || 
-                                destinations.find(d => d.id === experience.destinationId);
-                                
+              const destination = trip.destinations.find(d => d.id === experience.destinationId);
+                              
               return (
                 <Card key={experience.id} className="card-hover overflow-hidden">
                   <div className="relative h-48 overflow-hidden">
@@ -137,27 +137,28 @@ export default function AmazeMode() {
                     </div>
                   </div>
                   <CardContent className="pt-4">
-                    <h3 className="font-bold">{experience.name}</h3>
-                    {destination && (
-                      <div className="flex items-center text-sm text-muted-foreground mt-1">
-                        <MapPin className="h-3 w-3 mr-1" /> {destination.name}, {destination.country}
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h3 className="font-bold">{experience.name}</h3>
+                        {destination && (
+                          <div className="flex items-center text-sm text-muted-foreground mt-1">
+                            <MapPin className="h-3 w-3 mr-1" /> {destination.name}
+                          </div>
+                        )}
                       </div>
-                    )}
-                    <div className="flex items-center gap-4 mt-2">
                       {experience.duration && (
-                        <div className="flex items-center text-sm">
-                          <Clock className="h-3 w-3 mr-1 text-muted-foreground" /> 
+                        <Badge variant="outline" className="flex items-center gap-1">
+                          <Clock className="h-3 w-3" /> 
                           {experience.duration}
-                        </div>
-                      )}
-                      {experience.price && (
-                        <div className="flex items-center text-sm">
-                          <DollarSign className="h-3 w-3 mr-1 text-muted-foreground" /> 
-                          ${experience.price}
-                        </div>
+                        </Badge>
                       )}
                     </div>
-                    <p className="text-sm mt-2 line-clamp-2">{experience.description}</p>
+                    <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{experience.description}</p>
+                    {experience.price && (
+                      <Badge variant="secondary" className="mt-2">
+                        ${experience.price}
+                      </Badge>
+                    )}
                   </CardContent>
                   <CardFooter className="pt-0">
                     <Button 
