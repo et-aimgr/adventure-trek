@@ -66,7 +66,7 @@ const Index = () => {
         <footer className="py-6 border-t">
           <div className="container flex justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              Family Trip Navigator - Plan your multi-city trips together
+              AdventureTrek - Plan your multi-city trips together
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-sm text-muted-foreground hover:text-foreground">Help</a>
