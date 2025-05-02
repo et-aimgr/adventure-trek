@@ -64,3 +64,8 @@
   background: transparent;
   box-shadow: none;
 }
+
+/* Remove the border-bottom from the container div to eliminate the grey line */
+.tabs-container {
+  border-bottom: none;
+}

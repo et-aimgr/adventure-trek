@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -131,7 +130,8 @@
 
 /* Custom styling for tabs */
 .custom-tabs-list {
-  @apply bg-transparent rounded-lg p-1 mb-6 border-b;
+  @apply bg-transparent rounded-lg p-1 mb-6;
+  border-bottom: none;
 }
 
 .custom-tab {
@@ -144,6 +144,11 @@
 
 .custom-tab[data-state="inactive"] {
   @apply bg-transparent shadow-none;
+}
+
+/* Fix for tab container border */
+.tab-container {
+  border-bottom: none !important;
 }
 
 /* Animation keyframes */
