@@ -94,7 +94,7 @@ export default function PlacesMode() {
             />
           </div>
           
-          <div className="grid grid-cols-1 gap-3 mt-4 max-h-[calc(100vh-300px)] overflow-y-auto pr-2">
+          <div className="grid grid-cols-1 gap-3 mt-4 pr-2">
             {availableDestinations.map((destination) => (
               <Card key={destination.id} className="card-hover overflow-hidden">
                 <div className="destination-card h-32">
