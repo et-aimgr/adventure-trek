@@ -124,7 +124,7 @@ export default function PlacesMode() {
             
             {availableDestinations.length === 0 && (
               <div className="text-center py-8">
-                <p className="text-muted-foreground">No more destinations available to add</p>
+                <p className="text-muted-foreground">Search or ask a question to find more</p>
               </div>
             )}
           </div>
