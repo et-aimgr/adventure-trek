@@ -35,7 +35,7 @@ export const TripProvider = ({ children }: { children: ReactNode }) => {
     
     setTrip(prev => ({
       ...prev,
-      destinations: [...prev.destinations, destination],
+      destinations: [destination, ...prev.destinations], // Add to beginning of the list
     }));
     
     toast({
