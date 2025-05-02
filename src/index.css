@@ -92,3 +92,51 @@
 .destination-card img {
   @apply transition-transform duration-500 hover:scale-110;
 }
+
+/* Layout styles */
+.page-container {
+  @apply w-full;
+}
+
+.two-column-layout {
+  @apply grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6;
+}
+
+.main-column {
+  @apply md:col-span-2 lg:col-span-3;
+}
+
+.side-column {
+  @apply bg-muted/30 rounded-lg p-4;
+}
+
+/* Section headers */
+.section-header {
+  @apply flex justify-between items-center mb-4 pb-2 border-b;
+}
+
+.search-column {
+  @apply bg-muted/20 p-4 rounded-lg border shadow-sm;
+}
+
+.content-column {
+  @apply bg-background p-4 rounded-lg;
+}
+
+/* Your destinations section */
+.your-selections {
+  @apply bg-muted/10 rounded-lg p-4 mb-6 border;
+}
+
+/* Custom styling for tabs */
+.custom-tabs-list {
+  @apply bg-muted rounded-lg p-1 mb-6;
+}
+
+.custom-tab {
+  @apply rounded-md px-4 py-2 transition-all;
+}
+
+.custom-tab[data-state="active"] {
+  @apply bg-background text-accent font-medium border-b-2 border-accent shadow-sm;
+}
