@@ -43,7 +43,7 @@
   color: #888;
 }
 
-/* Tab styling fixes */
+/* Tab styling fixes - removing any shadow/grey line effects */
 [data-state="active"] {
   position: relative;
 }
@@ -51,10 +51,16 @@
 [data-state="active"]::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -1px;
   left: 0;
   right: 0;
   height: 2px;
   background-color: hsl(var(--primary));
   border-radius: 1px;
+}
+
+/* Clean up any background effects */
+[data-state="inactive"] {
+  background: transparent;
+  box-shadow: none;
 }

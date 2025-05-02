@@ -81,6 +81,7 @@
   @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
 }
 
+/* Clean up tab styling */
 .tab-active {
   @apply border-b-2 border-primary font-medium text-primary;
 }
@@ -138,7 +139,11 @@
 }
 
 .custom-tab[data-state="active"] {
-  @apply bg-background text-primary font-medium border-b-2 border-primary shadow-sm;
+  @apply bg-transparent text-primary font-medium border-b-2 border-primary;
+}
+
+.custom-tab[data-state="inactive"] {
+  @apply bg-transparent shadow-none;
 }
 
 /* Animation keyframes */

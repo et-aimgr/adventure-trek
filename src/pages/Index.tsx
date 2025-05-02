@@ -24,22 +24,22 @@ const Index = () => {
             value={activeTab}
             onValueChange={setActiveTab}
           >
-            <div className="flex justify-center mb-8">
-              <TabsList className="grid grid-cols-4 w-full max-w-md border-b bg-transparent">
-                <TabsTrigger value="places" className="flex flex-col gap-1 py-3 px-4">
-                  <MapPin className="h-4 w-4" />
+            <div className="flex justify-center mb-8 border-b">
+              <TabsList className="grid grid-cols-4 w-full max-w-md bg-transparent border-0 shadow-none">
+                <TabsTrigger value="places" className="flex flex-col gap-1 py-3 px-4 border-0">
+                  <MapPin className="h-5 w-5" />
                   <span className="text-xs">Places</span>
                 </TabsTrigger>
-                <TabsTrigger value="ways" className="flex flex-col gap-1 py-3 px-4">
-                  <Plane className="h-4 w-4" />
+                <TabsTrigger value="ways" className="flex flex-col gap-1 py-3 px-4 border-0">
+                  <Plane className="h-5 w-5" />
                   <span className="text-xs">Ways</span>
                 </TabsTrigger>
-                <TabsTrigger value="amaze" className="flex flex-col gap-1 py-3 px-4">
-                  <Sparkles className="h-4 w-4" />
+                <TabsTrigger value="amaze" className="flex flex-col gap-1 py-3 px-4 border-0">
+                  <Sparkles className="h-5 w-5" />
                   <span className="text-xs">Amaze</span>
                 </TabsTrigger>
-                <TabsTrigger value="eats" className="flex flex-col gap-1 py-3 px-4">
-                  <Utensils className="h-4 w-4" />
+                <TabsTrigger value="eats" className="flex flex-col gap-1 py-3 px-4 border-0">
+                  <Utensils className="h-5 w-5" />
                   <span className="text-xs">Eats</span>
                 </TabsTrigger>
               </TabsList>
