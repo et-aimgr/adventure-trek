@@ -25,7 +25,7 @@ const Index = () => {
             onValueChange={setActiveTab}
           >
             <div className="flex justify-center mb-8">
-              <TabsList className="grid grid-cols-4 w-full max-w-md">
+              <TabsList className="grid grid-cols-4 w-full max-w-md border-b bg-transparent">
                 <TabsTrigger value="places" className="flex flex-col gap-1 py-3 px-4">
                   <MapPin className="h-4 w-4" />
                   <span className="text-xs">Places</span>
