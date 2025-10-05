@@ -54,14 +54,14 @@ export default function AmazeMode() {
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {trip.experiences.map((experience) => {
                 const destination = trip.destinations.find(d => d.id === experience.destinationId);
                 
                 return (
-                  <Card key={experience.id} className="overflow-hidden border-primary/30 bg-primary/5">
+                  <Card key={experience.id} className="overflow-hidden border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5 shadow-md">
                     <div className="relative h-36 overflow-hidden">
-                      <img src={experience.image} alt={experience.name} className="w-full h-full object-cover" />
+                      <img src={experience.image} alt={experience.name} className="w-full h-full object-cover" loading="lazy" />
                       <div className="absolute top-2 right-2">
                         <Badge className="bg-accent text-accent-foreground">
                           <Star className="h-3 w-3 mr-1 fill-current" /> {experience.rating}
@@ -161,14 +161,14 @@ export default function AmazeMode() {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {filteredExperiences.map((experience) => {
                 const destination = trip.destinations.find(d => d.id === experience.destinationId);
                               
                 return (
-                  <Card key={experience.id} className="card-hover overflow-hidden">
+                  <Card key={experience.id} className="card-hover overflow-hidden shadow-md">
                     <div className="relative h-40 overflow-hidden">
-                      <img src={experience.image} alt={experience.name} className="w-full h-full object-cover" />
+                      <img src={experience.image} alt={experience.name} className="w-full h-full object-cover" loading="lazy" />
                       <div className="absolute top-2 right-2">
                         <Badge className="bg-accent text-accent-foreground">
                           <Star className="h-3 w-3 mr-1 fill-current" /> {experience.rating}

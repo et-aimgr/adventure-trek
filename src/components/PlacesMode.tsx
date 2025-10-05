@@ -94,11 +94,11 @@ export default function PlacesMode() {
             />
           </div>
           
-          <div className="grid grid-cols-1 gap-3 mt-4 pr-2">
+          <div className="grid grid-cols-1 gap-3 mt-4 pr-2 max-h-[calc(100vh-16rem)] overflow-y-auto">
             {availableDestinations.map((destination) => (
               <Card key={destination.id} className="card-hover overflow-hidden">
                 <div className="destination-card h-32">
-                  <img src={destination.image} alt={destination.name} className="w-full h-full object-cover" />
+                  <img src={destination.image} alt={destination.name} className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-3">
                   <div className="flex justify-between items-start">
@@ -147,15 +147,15 @@ export default function PlacesMode() {
           ) : (
             <div 
               ref={destinationsContainerRef} 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-slide-up"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 animate-slide-up"
             >
               {trip.destinations.map((destination, index) => (
                 <Card 
                   key={destination.id} 
-                  className={`overflow-hidden h-full ${index === 0 ? 'animate-scale-in' : ''}`}
+                  className={`overflow-hidden h-full shadow-md hover:shadow-xl transition-shadow ${index === 0 ? 'animate-scale-in' : ''}`}
                 >
                   <div className="relative h-48 overflow-hidden">
-                    <img src={destination.image} alt={destination.name} className="w-full h-full object-cover" />
+                    <img src={destination.image} alt={destination.name} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <CardContent className="pt-4">
                     <div className="flex justify-between items-start">

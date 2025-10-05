@@ -15,7 +15,7 @@ export default function Header() {
   };
 
   return (
-    <header className="py-6 px-4 md:px-6 border-b">
+    <header className="sticky top-0 z-40 py-4 px-4 md:px-6 border-b bg-background/80 backdrop-blur-md">
       <div className="container flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div className="flex-1">
           {isEditing ? (

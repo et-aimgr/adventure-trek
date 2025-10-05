@@ -24,23 +24,23 @@ const Index = () => {
             value={activeTab}
             onValueChange={setActiveTab}
           >
-            <div className="flex justify-center mb-8">
-              <TabsList className="grid grid-cols-4 w-full max-w-md bg-transparent border-0 shadow-none">
-                <TabsTrigger value="places" className="flex flex-col gap-1 py-3 px-4 border-0">
+            <div className="flex justify-center mb-6">
+              <TabsList className="grid grid-cols-4 w-full max-w-md bg-muted/50 backdrop-blur-sm p-1 rounded-xl shadow-sm">
+                <TabsTrigger value="places" className="flex flex-col gap-1 py-2.5 px-3 border-0 rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm">
                   <MapPin className="h-5 w-5" />
-                  <span className={activeTab === "places" ? "text-xs" : "hidden"}>Places</span>
+                  <span className={activeTab === "places" ? "text-xs font-medium" : "hidden"}>Places</span>
                 </TabsTrigger>
-                <TabsTrigger value="ways" className="flex flex-col gap-1 py-3 px-4 border-0">
+                <TabsTrigger value="ways" className="flex flex-col gap-1 py-2.5 px-3 border-0 rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm">
                   <Plane className="h-5 w-5" />
-                  <span className={activeTab === "ways" ? "text-xs" : "hidden"}>Ways</span>
+                  <span className={activeTab === "ways" ? "text-xs font-medium" : "hidden"}>Ways</span>
                 </TabsTrigger>
-                <TabsTrigger value="amaze" className="flex flex-col gap-1 py-3 px-4 border-0">
+                <TabsTrigger value="amaze" className="flex flex-col gap-1 py-2.5 px-3 border-0 rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm">
                   <Sparkles className="h-5 w-5" />
-                  <span className={activeTab === "amaze" ? "text-xs" : "hidden"}>Amaze</span>
+                  <span className={activeTab === "amaze" ? "text-xs font-medium" : "hidden"}>Amaze</span>
                 </TabsTrigger>
-                <TabsTrigger value="eats" className="flex flex-col gap-1 py-3 px-4 border-0">
+                <TabsTrigger value="eats" className="flex flex-col gap-1 py-2.5 px-3 border-0 rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm">
                   <Utensils className="h-5 w-5" />
-                  <span className={activeTab === "eats" ? "text-xs" : "hidden"}>Eats</span>
+                  <span className={activeTab === "eats" ? "text-xs font-medium" : "hidden"}>Eats</span>
                 </TabsTrigger>
               </TabsList>
             </div>

@@ -44,14 +44,14 @@ export default function EatsMode() {
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {trip.restaurants.map((restaurant) => {
                 const destination = trip.destinations.find(d => d.id === restaurant.destinationId);
                 
                 return (
-                  <Card key={restaurant.id} className="overflow-hidden">
+                  <Card key={restaurant.id} className="overflow-hidden shadow-md hover:shadow-xl transition-shadow">
                     <div className="relative h-48 overflow-hidden">
-                      <img src={restaurant.image} alt={restaurant.name} className="w-full h-full object-cover" />
+                      <img src={restaurant.image} alt={restaurant.name} className="w-full h-full object-cover" loading="lazy" />
                       <div className="absolute top-2 right-2">
                         <Badge className="bg-accent text-accent-foreground">
                           <Star className="h-3 w-3 mr-1 fill-current" /> {restaurant.rating}
@@ -120,14 +120,14 @@ export default function EatsMode() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredRestaurants.map((restaurant) => {
               const destination = trip.destinations.find(d => d.id === restaurant.destinationId);
                                 
               return (
-                <Card key={restaurant.id} className="card-hover overflow-hidden">
+                <Card key={restaurant.id} className="card-hover overflow-hidden shadow-md">
                   <div className="relative h-48 overflow-hidden">
-                    <img src={restaurant.image} alt={restaurant.name} className="w-full h-full object-cover" />
+                    <img src={restaurant.image} alt={restaurant.name} className="w-full h-full object-cover" loading="lazy" />
                     <div className="absolute top-2 right-2">
                       <Badge className="bg-accent text-accent-foreground">
                         <Star className="h-3 w-3 mr-1 fill-current" /> {restaurant.rating}
