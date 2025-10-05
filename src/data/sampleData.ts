@@ -28,7 +28,7 @@ export const destinations: Destination[] = [
     id: '4',
     name: 'Rome',
     country: 'Italy',
-    image: 'https://images.unsplash.com/photo-1555992828-4169ad9cfb74?q=80&w=1000',
+    image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1000',
     description: 'The Eternal City with the Colosseum, Roman Forum, and Vatican City.',
   },
   {
@@ -42,7 +42,7 @@ export const destinations: Destination[] = [
     id: '6',
     name: 'Cancun',
     country: 'Mexico',
-    image: 'https://images.unsplash.com/photo-1682553277971-6d96a8bbfaa3?q=80&w=1000',
+    image: 'https://images.unsplash.com/photo-1568402102990-bc541580b59f?q=80&w=1000',
     description: 'Known for its stunning beaches, vibrant nightlife, and nearby Mayan ruins.',
   },
   {
